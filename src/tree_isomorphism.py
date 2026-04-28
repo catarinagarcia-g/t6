@@ -10,14 +10,7 @@ from graph import Graph
 # ======================================================================
  
 def is_tree(g: Graph) -> Tuple[bool, str]:
-    """
-    Verifica se o grafo g representa uma árvore válida.
- 
-    Uma árvore não direcionada com V vértices tem exatamente V-1 arestas
-    e é conexa.  Um grafo vazio (V=0) é rejeitado por convenção.
- 
-    Retorna (True, "") se for árvore, ou (False, motivo) caso contrário.
-    """
+    
     if g.v == 0:
         return False, "O grafo não possui vértices."
  
@@ -56,13 +49,7 @@ def is_tree(g: Graph) -> Tuple[bool, str]:
 # ======================================================================
  
 def find_centers(g: Graph) -> List[int]:
-    """
-    Encontra o(s) centro(s) da árvore por remoção iterativa de folhas.
- 
-    O algoritmo mantém o grau efetivo de cada vértice e remove camadas
-    de folhas repetidamente.  Os últimos 1 ou 2 vértices que sobram são
-    os centros.
-    """
+    
     if g.v == 1:
         return [0]
  
@@ -90,13 +77,7 @@ def find_centers(g: Graph) -> List[int]:
 # ======================================================================
  
 def canonical_code(g: Graph, root: int) -> str:
-    """
-    Calcula a codificação canônica da árvore g enraizada em `root`.
- 
-    A BFS gera a ordem topológica (pai antes dos filhos); em seguida,
-    processamos na ordem inversa (folhas primeiro) para calcular o código
-    de baixo para cima.
-    """
+    
     parent = [-1] * g.v
     order: List[int] = []
     visited = [False] * g.v
@@ -128,13 +109,7 @@ def canonical_code(g: Graph, root: int) -> str:
  
  
 def tree_canonical(g: Graph) -> Tuple[str, List[int]]:
-    """
-    Retorna (código_canônico, lista_de_centros) para a árvore g.
- 
-    Caso a árvore tenha dois centros c1 e c2, o código canônico é
-    construído como a menor string entre as duas enraizações possíveis,
-    garantindo unicidade.
-    """
+   
     centers = find_centers(g)
  
     if len(centers) == 1:
@@ -155,20 +130,7 @@ def tree_canonical(g: Graph) -> Tuple[str, List[int]]:
 # ======================================================================
  
 def check_isomorphism(g1: Graph, g2: Graph) -> dict:
-    """
-    Compara duas árvores e retorna um dicionário com todos os detalhes
-    do processo de verificação de isomorfismo.
- 
-    Chaves do dicionário retornado
-    --------------------------------
-    valid1, valid2   : bool
-    reason1, reason2 : str   (motivo de invalidade, se houver)
-    centers1         : list[int] | None
-    centers2         : list[int] | None
-    code1            : str | None
-    code2            : str | None
-    isomorphic       : bool | None   (None se alguma entrada for inválida)
-    """
+    
     result: dict = {}
  
     ok1, reason1 = is_tree(g1)

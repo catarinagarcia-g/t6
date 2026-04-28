@@ -1,10 +1,4 @@
-"""
-main.py — Ponto de entrada do programa de isomorfismo de árvores.
- 
-Uso:
-    python main.py arquivo1.txt arquivo2.txt
-"""
- 
+
 import sys
 from graph import Graph
 from tree_isomorphism import check_isomorphism
@@ -75,16 +69,16 @@ def main() -> None:
  
     # Validação — Árvore 1
     if result["valid1"]:
-        print(f"\n  [Árvore 1] ✔ É uma árvore válida.")
+        print(f"\n  [Árvore 1]  É uma árvore válida.")
     else:
-        print(f"\n  [Árvore 1] ✘ NÃO é uma árvore válida.")
+        print(f"\n  [Árvore 1]  NÃO é uma árvore válida.")
         print(f"             Motivo: {result['reason1']}")
  
     # Validação — Árvore 2
     if result["valid2"]:
-        print(f"  [Árvore 2] ✔ É uma árvore válida.")
+        print(f"  [Árvore 2]  É uma árvore válida.")
     else:
-        print(f"  [Árvore 2] ✘ NÃO é uma árvore válida.")
+        print(f"  [Árvore 2]  NÃO é uma árvore válida.")
         print(f"             Motivo: {result['reason2']}")
  
     # Se alguma entrada for inválida, encerra sem comparar
