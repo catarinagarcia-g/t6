@@ -2,7 +2,7 @@
 
 ## Vídeo explicativo
 
-> 🎥 **Link do vídeo:**
+> 🎥 **Link do vídeo:** https://youtu.be/kpE4kO9NhwU?si=EPij3Xr_05HwF1DR
 
 ---
 
